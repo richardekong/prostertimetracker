@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.richydave.prostortimetracker.api.DeleteIconClickListener;
 import com.richydave.prostortimetracker.model.Wage;
 import com.richydave.prostortimetracker.data.DataBaseHelper;
 import com.richydave.prostortimetracker.R;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class WageDetailsActivity extends AppCompatActivity {
+public class WageDetailsActivity extends AppCompatActivity implements DeleteIconClickListener{
     private DataBaseHelper dataBaseHelper;
 
     @Override
@@ -55,6 +56,16 @@ public class WageDetailsActivity extends AppCompatActivity {
                 Log.e("NullPointerException", e.getMessage());
             }
         }
+    }
+
+    @Override
+    public void setOnDeleteIconClick(int position, List<Wage> wageDetails, WageDetailAdapter adapter, DataBaseHelper dataBaseHelper) {
+        Wage removedDetails = wageDetails.remove(position);
+        //delete the removed item from the database
+        dataBaseHelper.deleteWageDetails(removedDetails);
+        //notify the adapter
+        adapter.notifyItemRemoved(position);
+        adapter.notifyItemRangeChanged(position, wageDetails.size());
     }
 
     @Override

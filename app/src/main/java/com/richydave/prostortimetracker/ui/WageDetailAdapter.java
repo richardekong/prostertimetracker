@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.richydave.prostortimetracker.api.DeleteIconClickListener;
 import com.richydave.prostortimetracker.model.Service;
 import com.richydave.prostortimetracker.model.Wage;
 import com.richydave.prostortimetracker.data.DataBaseHelper;
@@ -20,6 +22,7 @@ public class WageDetailAdapter extends RecyclerView.Adapter<WageDetailAdapter.Wa
     private static final String FORMAT_PATTERN = "%.2f Hours - (%.2f %s)";
     //instance variable declaration
     private List<Wage> wageDetails;
+    private DeleteIconClickListener deleteIconClickListener;
 
     //constructor
     public WageDetailAdapter(List<Wage> wageDetails) {
@@ -46,7 +49,8 @@ public class WageDetailAdapter extends RecyclerView.Adapter<WageDetailAdapter.Wa
         holder.savedDateTime.setText(saveTime);
         holder.deleteIcon.setOnClickListener((view) ->
                 //set on delete icon clicked listener
-                deleteItem(position,wageDetails,this,holder.dataBaseHelper));
+                //deleteItem(position,wageDetails,this,holder.dataBaseHelper));
+                deleteIconClickListener.setOnDeleteIconClick(position,wageDetails,this,holder.dataBaseHelper));
     }
 
     @Override
@@ -54,7 +58,7 @@ public class WageDetailAdapter extends RecyclerView.Adapter<WageDetailAdapter.Wa
         return wageDetails.size();
     }
 
-    public void deleteItem(int position, List<Wage> WageDetails, WageDetailAdapter adapter,
+    public void deleteItem(int position, List<Wage> wageDetails, WageDetailAdapter adapter,
                            DataBaseHelper dataBaseHelper) {
         Wage removedDetails = wageDetails.remove(position);
         //delete the removed item from the database
