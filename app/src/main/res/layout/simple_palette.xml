@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <View
+        android:id="@+id/pink_box"
+        android:layout_width="@dimen/color_box_dimen"
+        android:layout_height="@dimen/color_box_dimen"
+        android:background="@color/pink_box_color" />
+
+    <View
+        android:id="@+id/yellow_box"
+        android:layout_width="@dimen/color_box_dimen"
+        android:layout_height="@dimen/color_box_dimen"
+        android:layout_toEndOf="@+id/pink_box"
+        android:background="@color/yellow_box_color" />
+
+    <View
+        android:id="@+id/blue_box"
+        android:layout_width="@dimen/color_box_dimen"
+        android:layout_height="@dimen/color_box_dimen"
+        android:layout_toEndOf="@+id/yellow_box"
+        android:background="@color/blue_box_color" />
+
+    <View
+        android:id="@+id/dark_box"
+        android:layout_width="@dimen/color_box_dimen"
+        android:layout_height="@dimen/color_box_dimen"
+        android:layout_toEndOf="@+id/blue_box"
+        android:background="@color/dark_box_color" />
+</RelativeLayout>

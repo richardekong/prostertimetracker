@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="setting_array">
+        <item>@string/setting_change_color</item>
+        <item>@string/setting_change_price</item>
+        <item>@string/setting_change_currency</item>
+    </string-array>
+</resources>

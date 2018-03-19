@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/total_tracked_Wage_layout"
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.richydave.prostortimetracker.ui.TotalTrackedWagesActivity"
+    tools:showIn="@layout/activity_total_tracked_wages">
+
+
+    <TextView
+        android:id="@+id/now_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/now_label"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/total_tracked_Wage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/total_tracked_wages_dimen"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/wages_Details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_size"
+        android:textStyle="bold"/>
+
+</LinearLayout>

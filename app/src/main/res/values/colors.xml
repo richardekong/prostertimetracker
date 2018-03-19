@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF4081</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="add_fab_color">#ffb940</color>
+    <color name="add_fab_color2">#FFE91F08</color>
+    <color name="yellow_box_color">#ffb940</color>
+    <color name="blue_box_color">#303F90</color>
+    <color name="pink_box_color">#FF4081</color>
+    <color name="dark_box_color">#222222</color>
+</resources>
